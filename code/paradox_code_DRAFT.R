@@ -4,8 +4,8 @@ library(nvctr)
 
 #read custom codes
 
-source("pool_cov.R") # Written by Gene Hunt
-source("mee312674-sup-0001-appendixs1.r") # From Grabowski and Porto (2017) MEE
+source("code/pool_cov.R") # Written by Gene Hunt
+source("code/mee312674-sup-0001-appendixs1.r") # From Grabowski and Porto (2017) MEE
 
 #read in data
 
@@ -234,7 +234,7 @@ Figure_1b <- ggplot(data = as.data.frame(variance_dat), aes(x = log(V1), y = log
   xlab("log(variance)") + ylab("log(divergence)") +
   annotate(geom = "text", x = -7.2, y = -6.6, label = expression("= slope"), hjust = 0, size= 2.1)+
   annotate(geom = "text", x = -7.5, y = -8.3, label = expression("Bjorklund et al. 2017"), hjust = 0, size= 2.1)+
-  annotate(geom = "segment", x = log(min(as.data.frame(variance_dat)$V1)), xend = log(min(as.data.frame(variance_dat)$V1))+0.5, y = log(min(as.data.frame(variance_dat)$V2))+1.2, , yend = log(min(as.data.frame(variance_dat)$V2))+1.2, arrow = arrow(type = "closed", length = unit(0.02, "npc")), linewidth = .3, lty = "dashed")+
+  annotate(geom = "segment", x = log(min(as.data.frame(variance_dat)$V1)), xend = log(min(as.data.frame(variance_dat)$V1))+0.5, y = log(min(as.data.frame(variance_dat)$V2))+1.2,  yend = log(min(as.data.frame(variance_dat)$V2))+1.2, arrow = arrow(type = "closed", length = unit(0.02, "npc")), linewidth = .3, lty = "dashed")+
   annotate(geom = "segment", x = log(min(as.data.frame(variance_dat)$V1))+0.5, xend = log(min(as.data.frame(variance_dat)$V1))+0.5, y = log(min(as.data.frame(variance_dat)$V2))+1.25 , yend = log(min(as.data.frame(variance_dat)$V2))+(1.25 + 0.5* 2.4828), arrow = arrow(type = "closed", length = unit(0.02, "npc")), linewidth = .3, lty = "dashed")+
   theme(		axis.text=element_blank(),
   				axis.title=element_text(size=7),
