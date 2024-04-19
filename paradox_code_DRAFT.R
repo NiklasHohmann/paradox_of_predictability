@@ -4,31 +4,31 @@ library(nvctr)
 
 #read custom codes
 
-source("~/Dropbox/Research/MacroEvolvability/R code/pool_cov.R") # Written by Gene Hunt
-source("~/Dropbox/Research/MacroEvolvability/R code/mee312674-sup-0001-appendixs1.r") # From Grabowski and Porto (2017) MEE
+source("pool_cov.R") # Written by Gene Hunt
+source("mee312674-sup-0001-appendixs1.r") # From Grabowski and Porto (2017) MEE
 
 #read in data
 
-load('~/Dropbox/ESEB_Timeseries_analyses_personal/analyses/RData/Bjorklund_2017.RData')
-load('~/Dropbox/ESEB_Timeseries_analyses_personal/analyses/RData/Brombacher.et.al_2017_Globoconella_puncticulata.Rdata')
-load('~/Dropbox/ESEB_Timeseries_analyses_personal/analyses/RData/Brombacher.et.al_2017_Truncorotalia_crassaformis.Rdata')
-load('~/Dropbox/ESEB_Timeseries_analyses_personal/analyses/RData/bryo.RData')
-load('~/Dropbox/ESEB_Timeseries_analyses_personal/analyses/RData/Guralnick_et.al.2022_Peromyscus_maniculatus_females.Rdata')
-load('~/Dropbox/ESEB_Timeseries_analyses_personal/analyses/RData/Guralnick_et.al.2022_Peromyscus_maniculatus_males.Rdata')
-load('~/Dropbox/ESEB_Timeseries_analyses_personal/analyses/RData/Firmat.et.al_2014.Rdata')
-load('~/Dropbox/ESEB_Timeseries_analyses_personal/analyses/RData/Geary_conj.RData')
-load('~/Dropbox/ESEB_Timeseries_analyses_personal/analyses/RData/Geary_dipro.RData')
-load('~/Dropbox/ESEB_Timeseries_analyses_personal/analyses/RData/Geladi.RData')
-load('~/Dropbox/ESEB_Timeseries_analyses_personal/analyses/RData/Poseidonamicus_LH.Rdata')
-load('~/Dropbox/ESEB_Timeseries_analyses_personal/analyses/RData/Mattioli_2021.RData')
-load('~/Dropbox/ESEB_Timeseries_analyses_personal/analyses/RData/Pimiento.Balk.2015.Rdata')
-load('~/Dropbox/ESEB_Timeseries_analyses_personal/analyses/RData/Theriot_et_al_2006.Rdata')
-load('~/Dropbox/ESEB_Timeseries_analyses_personal/analyses/RData/Ulaski_et_al_2022.Rdata')
-load('~/Dropbox/ESEB_Timeseries_analyses_personal/analyses/RData/Bert_data.RData')
-load('~/Dropbox/ESEB_Timeseries_analyses_personal/analyses/RData/Voje.et.al.2022.Rdata')
-load('~/Dropbox/ESEB_Timeseries_analyses_personal/analyses/RData/Waller_2017.RData')
-load('~/Dropbox/ESEB_Timeseries_analyses_personal/analyses/RData/Witts_2020.Rdata')
-load('~/Dropbox/ESEB_Timeseries_analyses_personal/analyses/RData/Yamaguchi.et.al_2017.Rdata')
+load('data/Bjorklund_2017.RData')
+load('data/Brombacher.et.al_2017_Globoconella_puncticulata.Rdata')
+load('data/Brombacher.et.al_2017_Truncorotalia_crassaformis.Rdata')
+load('data/bryo.RData')
+load('data/Guralnick_et.al.2022_Peromyscus_maniculatus_females.Rdata')
+load('data/Guralnick_et.al.2022_Peromyscus_maniculatus_males.Rdata')
+load('data/Firmat.et.al_2014.Rdata')
+load('data/Geary_conj.RData')
+load('data/Geary_dipro.RData')
+load('data/Geladi.RData')
+load('data/Poseidonamicus_LH.Rdata')
+load('data/Mattioli_2021.RData')
+load('data/Pimiento.Balk.2015.Rdata')
+load('data/Theriot_et_al_2006.Rdata')
+load('data/Ulaski_et_al_2022.Rdata')
+load('data/Bert_data.RData')
+load('data/Voje.et.al.2022.Rdata')
+load('data/Waller_2017.RData')
+load('data/Witts_2020.Rdata')
+load('data/Yamaguchi.et.al_2017.Rdata')
 
 #gather data into one object
 
@@ -163,7 +163,7 @@ results_summary_magnitude[j,11] <- length(full_data[[j]] $nn)
 results_summary_magnitude[j,12] <- ifelse(full_data[[j]] $time.units == "Myr", "paleo", "neo")
 results_summary_magnitude[j,13] <- full_data[[j]] $reference
 
-write.csv(out_matrix_evolvabilities, paste0("~/Dropbox/Research/MacroEvolvability/MacroEvolvabilityData/",paste(full_data[[j]] $reference, full_data[[j]] $taxon, full_data[[j]] $sex, sep = "_"), ".csv"))
+write.csv(out_matrix_evolvabilities, paste0("data/output/",paste(full_data[[j]] $reference, full_data[[j]] $taxon, full_data[[j]] $sex, sep = "_"), ".csv"))
 
 ##### Pooled P #####
 
@@ -223,9 +223,9 @@ library(scales)
 
 #Figure 1b
 
-setwd("~/Dropbox/ESEB_Timeseries_analyses_personal/analyses/var_div_dat")#this folder should have data-wise outputs from the loop above
+#setwd("~/Dropbox/ESEB_Timeseries_analyses_personal/analyses/var_div_dat")#this folder should have data-wise outputs from the loop above
 
-variance_dat <- read.csv("Björklund_2017_Ficedula_albicollis_male.csv")
+variance_dat <- read.csv("data/output/Björklund_2017_Ficedula_albicollis_male.csv")
 
 Figure_1b <- ggplot(data = as.data.frame(variance_dat), aes(x = log(V1), y = log(V2))) +
   geom_point(size = 1, alpha = 0.1) +
@@ -277,14 +277,14 @@ row1 <- plot_grid(NULL, NULL, Figure_1b, nrow = 3, rel_heights = c(4,1,4),
 plot_grid(row1, Figure_1c, ncol = 2, rel_widths = c(1,2.5),
   label_size = 12, label_fontface = 'bold', label_fontfamily = 'Helvetica',  labels = c(" ", "c"))
 
-ggsave("~/Dropbox/ESEB_Timeseries_analyses_personal/plot/time_vs_exponent_ver3.pdf", device = "pdf", width = 14, height = 10, units = "cm")
+ggsave("figs/time_vs_exponent_ver3.pdf", device = "pdf", width = 14, height = 10, units = "cm")
 
 #Rest of the figure was created using keynote
 
 #Figure S2
 
-variance_dat2 <- read.csv("Brombacher.et.al_2017_Globoconella_puncticulata_unknown.csv")
-variance_dat3 <- read.csv("Brombacher.et.al_2017_Truncorotalia_crassaformis_unknown.csv")
+variance_dat2 <- read.csv("data/output/Brombacher.et.al_2017_Globoconella_puncticulata_unknown.csv")
+variance_dat3 <- read.csv("data/output/Brombacher.et.al_2017_Truncorotalia_crassaformis_unknown.csv")
 
 summary(lm(log(V2)~log(V1), data = as.data.frame(variance_dat2)))
 summary(lm(log(V2)~log(V1), data = as.data.frame(variance_dat3)))
@@ -308,7 +308,7 @@ brom_2 = ggplot(data = as.data.frame(variance_dat3), aes(x = V1, y = V2)) +
 plot_grid(brom_1, brom_2, ncol = 2, rel_widths = c(1,1),
   label_size = 10, label_fontface = 'bold', label_fontfamily = 'Helvetica',  labels = c("Globoconella puncticulata", "Truncorotalia crassaformis"))
 
-ggsave("~/Dropbox/ESEB_Timeseries_analyses_personal/plot/Brombacher_plot.pdf", device = "pdf", width = 15, height = 15/2, units = "cm")
+ggsave("figs/Brombacher_plot.pdf", device = "pdf", width = 15, height = 15/2, units = "cm")
 
 #Figure S3
 
@@ -322,16 +322,16 @@ ggplot(data = as.data.frame(results_summary_magnitude_corrected), aes(x = as.num
   theme(	legend.title = element_blank(),
   				legend.position = "bottom")
 
-ggsave("~/Dropbox/ESEB_Timeseries_analyses_personal/plot/hist.pdf", device = "pdf", width = 12, height = 12, units = "cm")
+ggsave("figs/hist.pdf", device = "pdf", width = 12, height = 12, units = "cm")
 
 #Figure S4
 
 #Prepare data such that stepwise estimates of variance and divergence are stored in one dataframe
 
-setwd("~/Dropbox/ESEB_Timeseries_analyses_personal/analyses/var_div_dat")#this folder should have data-wise outputs from the loop above
+#setwd("data/var_div_dat")#this folder should have data-wise outputs from the loop above
 
 df <-
-  list.files(pattern = "*.csv") %>% 
+  paste0("data/output/" , list.files(path = "data/output/", pattern = "*.csv")) %>% 
   map_df(~read_csv(.))
 df
 
@@ -362,7 +362,7 @@ ggplot(data=df, aes(x = variance*100, y = abs_divergence*100, fill = data_type2 
     			legend.position = c(0.3, 0.95),
     			legend.background = element_rect(fill = "transparent", colour = "transparent"))
 
-ggsave('~/Dropbox/ESEB_Timeseries_analyses_personal/analyses/test.pdf',h = 100, w = 100, units = 'mm', scale = 1, device ="pdf")
+ggsave('figs/test.pdf',h = 100, w = 100, units = 'mm', scale = 1, device ="pdf")
 
 #Figure S5
 
@@ -442,7 +442,7 @@ abs_pool <- ggplot(data = na.omit(results_summary_pooled_P)[-21,], aes(x = as.nu
 cowplot::plot_grid(mag_pool, abs_raw, abs_pool , nrow = 1,
   label_size = 12, label_fontface = 'bold', label_fontfamily = 'Helvetica',  labels = c("a", "b", "c"))
 
-ggsave("~/Dropbox/ESEB_Timeseries_analyses_personal/plot/sensitivity_revision.pdf", device = "pdf", width = 30, height = 10, units = "cm")
+ggsave("figs/sensitivity_revision.pdf", device = "pdf", width = 30, height = 10, units = "cm")
 
 #Statistical tests
 
