@@ -331,7 +331,7 @@ ggsave("figs/hist.pdf", device = "pdf", width = 12, height = 12, units = "cm")
 #setwd("data/var_div_dat")#this folder should have data-wise outputs from the loop above
 
 df <-
-  paste0("data/output/" , list.files(path = "data/output/", pattern = "*.csv")) %>% 
+  paste0("data/var_div_dat/" , list.files(path = "data/var_div_dat/", pattern = "*.csv")) %>% 
   map_df(~read_csv(.))
 df
 
