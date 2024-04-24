@@ -1,7 +1,7 @@
 # paradox_of_predictability
 Supplementary code and data for "The paradox of predictability"
 
-## Authors
+## Authors (no specific order)
 
 __Niklas Hohmann__  (creator and maintainer of repository)  
 Utrecht University  
@@ -13,6 +13,27 @@ __Masahito Tsuboi__
 Lund University  
 Web page: [www.masahitotsuboi.com](https://www.masahitotsuboi.com/)  
 ORCID: [0000-0002-0144-2893](https://orcid.org/0000-0002-0144-2893)
+
+__Kjetil L. Voje__  
+ORCID:  [0000-0003-2556-3080](https://orcid.org/0000-0003-2556-3080)
+
+__Melanie Hopkins__  
+ORCID: [0000-0002-3580-2172](https://orcid.org/0000-0002-3580-2172)
+
+__Meghan Balk__  
+ORCID: [0000-0003-2699-3066](https://orcid.org/0000-0003-2699-3066)
+
+__Sophie Nilén__  
+ORCID: [0009-0002-0996-0182](https://orcid.org/0009-0002-0996-0182)
+
+__Erik I. Svensson__  
+ORCID: [0000-0001-9006-016X](https://orcid.org/0000-0001-9006-016X)
+
+__Lee Hsiang Liow__  
+ORCID: [0000-0002-3732-6069](https://orcid.org/0000-0002-3732-6069)
+
+__Gene Hunt__  
+ORCID: [0000-0001-6430-5020](https://orcid.org/0000-0001-6430-5020)
 
 ## Requirements
 
@@ -28,7 +49,7 @@ renv::restore()
 
 to install all required packages in the correct version. Now you are set up to interact with the code and data.
 
-Then you can inspect and run the code in the directory `code/`
+Then you can inspect and run the code in the directory `code/`. The main analysis is contained in the script `code/analysis.R`.
 
 ## Repository structure
 
@@ -52,4 +73,7 @@ Apache 2.0, see LICENSE file for details.
 
 ## Funding information
 
-Add information here.
+This work was funded by
+1. The Center for Advanced Studies in Norwegian Academy of Science and Letters to Thomas F. Hansen and Christophe Pélabon and 
+2. The Japanese Society for the Promotion of Science, Overseas Research Fellowship to Masahito Tsuboi (Grant identification number: 202270014)
+
