@@ -1,5 +1,5 @@
 # paradox_of_predictability
-Supplementary code and data for "The paradox of predictability"
+Supplementary code and data for "The paradox of Predictability Provides a Bridge Between 1 Micro- and Macroevolution".
 
 ## Authors (no specific order)
 
