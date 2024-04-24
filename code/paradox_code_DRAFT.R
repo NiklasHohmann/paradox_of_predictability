@@ -2,6 +2,9 @@
 library(evolvability)
 library(nvctr)
 
+## set seed
+set.seed(1)
+
 #read custom codes
 
 source("code/pool_cov.R") # Written by Gene Hunt
