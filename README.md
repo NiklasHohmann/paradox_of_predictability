@@ -3,16 +3,16 @@ Supplementary code and data for "The paradox of Predictability Provides a Bridge
 
 ## Authors (no specific order)
 
-__Niklas Hohmann__  (creator and maintainer of repository)  
-Utrecht University  
-email: n.h.hohmann [at] uu.nl  
-Web page: [www.uu.nl/staff/NHohmann](https://www.uu.nl/staff/NHHohmann)  
-ORCID: [0000-0003-1559-1838](https://orcid.org/0000-0003-1559-1838)
-
 __Masahito Tsuboi__  
 Lund University  
 Web page: [www.masahitotsuboi.com](https://www.masahitotsuboi.com/)  
 ORCID: [0000-0002-0144-2893](https://orcid.org/0000-0002-0144-2893)
+
+__Niklas Hohmann__  
+Utrecht University  
+email: n.h.hohmann [at] uu.nl  
+Web page: [www.uu.nl/staff/NHohmann](https://www.uu.nl/staff/NHHohmann)  
+ORCID: [0000-0003-1559-1838](https://orcid.org/0000-0003-1559-1838)
 
 __Kjetil L. Voje__  
 ORCID:  [0000-0003-2556-3080](https://orcid.org/0000-0003-2556-3080)
