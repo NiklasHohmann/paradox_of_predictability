@@ -1,4 +1,7 @@
 # paradox_of_predictability
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.11059550.svg)](https://doi.org/10.5281/zenodo.11059550)
+
 Supplementary code and data for "The paradox of Predictability Provides a Bridge Between 1 Micro- and Macroevolution".
 
 ## Authors (no specific order)
@@ -74,6 +77,6 @@ Apache 2.0, see LICENSE file for details.
 ## Funding information
 
 This work was funded by
-1. The Center for Advanced Studies in Norwegian Academy of Science and Letters to Thomas F. Hansen and Christophe Pélabon and 
-2. The Japanese Society for the Promotion of Science, Overseas Research Fellowship to Masahito Tsuboi (Grant identification number: 202270014)
 
+1. The Center for Advanced Studies in Norwegian Academy of Science and Letters to Thomas F. Hansen and Christophe Pélabon and
+2. The Japanese Society for the Promotion of Science, Overseas Research Fellowship to Masahito Tsuboi (Grant identification number: 202270014)
