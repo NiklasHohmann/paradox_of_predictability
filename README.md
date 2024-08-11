@@ -1,7 +1,4 @@
 # paradox_of_predictability
-
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.11059550.svg)](https://doi.org/10.5281/zenodo.11059550)
-
 Supplementary code and data for "The paradox of Predictability Provides a Bridge Between 1 Micro- and Macroevolution".
 
 ## Authors (no specific order)
@@ -70,6 +67,25 @@ Then you can inspect and run the code in the directory `code/`. The main analysi
 * _README.md_ : readme file
 * _renv.lock_ : lock file for `renv` package
 
+## Data
+
+Bibliographical references of the data are shown in Table S1 of the publication. 
+
+Raw data is stored in .RData files as list (of lists). The first layer of the list contains 10 variables of the following name and meaning.
+
+$nsamp		: number of time steps
+$nvar		: number of variables
+$M		: mean values of variables at each time step
+$S		: list of phenotypic variance-covariance matrices (P-matrices) at each time step
+$nn		: sample size at each time step
+$tt		: time lapse between steps (the first entry is 0)
+$time.units	: unit of time laper. Either "Myr" for million years or "yr" for years.
+$taxon		: taxon name (Genus and species)
+$sex		: sex. Either "male" or "female".
+$reference	: bibliographical reference
+
+Note that the unit of raw data is measurement of size and shape in the ratio scale (length and area) except for the whorl count (ordinal) in Bellamya (see Table S1). Whorl count however essentially reflects length in the ratio scale, and thus treated here as a ratio scale trait. In all cases, traits in the original scales were natural-log transformed before estimating the P-matrix. Values presented in "$S" are therefore are mean-scaled variances and covariances, which are unit-less elasticities in percentage of the mean (see Hansen and Houle 2008, Voje et al 2023 for measurement theory behind this operation). For the trait units and further details about each measurements, please consult original sources.
+
 ## License
 
 Apache 2.0, see LICENSE file for details.
@@ -77,6 +93,6 @@ Apache 2.0, see LICENSE file for details.
 ## Funding information
 
 This work was funded by
-
-1. The Center for Advanced Studies in Norwegian Academy of Science and Letters to Thomas F. Hansen and Christophe Pélabon and
+1. The Center for Advanced Studies in Norwegian Academy of Science and Letters to Thomas F. Hansen and Christophe Pélabon and 
 2. The Japanese Society for the Promotion of Science, Overseas Research Fellowship to Masahito Tsuboi (Grant identification number: 202270014)
+
